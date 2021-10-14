@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -16,14 +17,54 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+//        NumbersClickListener onClick = new NumbersClickListener();
+        TextView number = (TextView) findViewById(R.id.numbers);
+        number.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent numberIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numberIntent);
+            }
+        });
+
+        TextView color = (TextView) findViewById(R.id.colors);
+        color.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent colorIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorIntent);
+            }
+        });
+
+        TextView family = (TextView) findViewById(R.id.family);
+        family.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent phraseIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phraseIntent);
+            }
+        });
+
+
     }
-    public void openNumberList(View view){
-        Intent i = new Intent(this,NumbersActivity.class);
-        startActivity(i);
-    }
+
+//    public void openNumberList(View view) {
+//        Intent i = new Intent(this, NumbersActivity.class);
+//        startActivity(i);
+//    }
 
 
 
+    
 }
 
 
